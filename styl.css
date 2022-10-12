@@ -1,0 +1,38 @@
+body{
+    font-family: monospace;
+}
+.banner{
+    background-color: dodgerblue;
+    text-align: center;
+    padding: 1px 0px 20px 0px;
+    height: 10%;
+}
+.main{
+    background-color: skyblue;
+    text-align: center;
+    padding: 1px 0px 20px 0px;
+    height: 73%;
+}
+.footer{
+    background-color: dodgerblue;
+    text-align: center;
+    padding: 1px 0px 20px 0px;
+    height: 10%;
+}
+.button{
+    margin: 40px;
+    border-radius: 5px; 
+    background-color: aquamarine;
+    height: 30%;
+    font-family: monospace;
+    cursor: pointer;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 15px;
+}
