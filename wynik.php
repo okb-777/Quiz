@@ -19,7 +19,8 @@
                 $answear = $_POST['odpowiedz'];
                 $is_true = $_POST['is_true'];
                 
-                if($is_true==1){
+                if($is_true==1)
+                {
                     echo "<b>Brawo! to dobra odpowiedź</b>";
                 }
                 else{
@@ -32,10 +33,12 @@
             <?php
                 $answear = $_POST['odpowiedz'];
             
-                if(isset($_POST['odpowiedz'])){
+                if(isset($_POST['odpowiedz']))
+                {
                     echo "<b>".$answear."</b><br>";  
                 }
-                else{
+                else
+                {
                     echo "Brak odpowiedzi <br>";  
                 }
             ?>

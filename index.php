@@ -16,11 +16,11 @@
         <form action="wynik.php" method="post">
             <div class="banner">
                 <h2>Quiz</h2>
-                
             </div>
             <div class="main">
                 <?php 
-                    for($i=0; $i<1; $i++){
+                    for($i=0; $i<1; $i++)
+                    {
                         if($result = $db->query($questions))
                         {
                             while($row = $result->fetch_array())
@@ -33,7 +33,7 @@
                                     while($row = $result->fetch_array()) 
                                     {
                                         echo'
-                                            <div><h4><input type="radio" name="odpowiedz" value="'.$row["content"].'">'.$row["content"].'</h4></div>
+                                            <div><h4><input type="checkbox" name="odpowiedz" value="'.$row["content"].'">'.$row["content"].'</h4></div>
                                             <input type="hidden" name="is_true" value="'.$row["is_right"].'">
                                         '; 
                                     }
