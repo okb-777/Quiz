@@ -6,47 +6,46 @@
         <?php
             $db = new mysqli ("127.0.0.1", "root", "","quiz");
             $db -> query ('SET NAMES utf8');
-            $rand = rand(1, 4);
+            $rand = rand(1, 10);
             $questions = "SELECT * FROM questions WHERE id=".$rand;
             $answears = "SELECT * FROM answears WHERE questions_id=".$rand;
             
         ?>
     </head>
     <body>
-        <div class="banner">
-            <h2>Quiz</h2>
-        </div>
-        <div class="main">
-            <?php 
-                for($i=0; $i<3; $i++){
-                    $rand = rand(1, 4);
-                    if($result = $db->query($questions))
-                    {
-                        while($row = $result->fetch_array())
+        <form action="wynik.php" method="post">
+            <div class="banner">
+                <h2>Quiz</h2>
+            </div>
+            <div class="main">
+                <?php 
+                    for($i=0; $i<1; $i++){
+                        if($result = $db->query($questions))
                         {
-                            echo'
-                                <div><h3>'.$row["id"].'. '.$row["content"].':</h3></div>
-                            ';
-                            if($result = $db->query($answears))
+                            while($row = $result->fetch_array())
                             {
-                                while($row = $result->fetch_array()) 
+                                echo'
+                                    <div><h3>'.$row["id"].'. '.$row["content"].':</h3></div>
+                                ';
+                                if($result = $db->query($answears))
                                 {
-                                    echo'
-                                        <div><h4><input type="radio" name="y">'.$row["content"].'</4></div>
-                                    '; 
+                                    while($row = $result->fetch_array()) 
+                                    {
+                                        echo'
+                                            <div><h4><input type="radio" name="odpowiedz" value="'.$row["content"].'">'.$row["content"].'</h4></div>
+                                        '; 
+                                    }
                                 }
                             }
-                        }
+                        }  
                     }  
-                }  
-            ?>
-        </div>
-        <div class="footer"> 
-            <?php
-                echo'
+                ?>
+            </div>
+            <div class="footer">
+                <a href="wyniki.php">
                     <button type="submit" class="button" oneclick>Sprawdź odpowiedzi</button>
-                '
-            ?>
-        </div>
+                </a>
+            </div>
+        </form>
     </body>
 </html>
