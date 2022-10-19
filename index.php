@@ -16,6 +16,7 @@
         <form action="wynik.php" method="post">
             <div class="banner">
                 <h2>Quiz</h2>
+                
             </div>
             <div class="main">
                 <?php 
@@ -26,13 +27,14 @@
                             {
                                 echo'
                                     <div><h3>'.$row["id"].'. '.$row["content"].':</h3></div>
-                                ';
+                                ';  
                                 if($result = $db->query($answears))
                                 {
                                     while($row = $result->fetch_array()) 
                                     {
                                         echo'
                                             <div><h4><input type="radio" name="odpowiedz" value="'.$row["content"].'">'.$row["content"].'</h4></div>
+                                            <input type="hidden" name="is_true" value="'.$row["is_right"].'">
                                         '; 
                                     }
                                 }
@@ -43,7 +45,7 @@
             </div>
             <div class="footer">
                 <a href="wyniki.php">
-                    <button type="submit" class="button" oneclick>Sprawdź odpowiedzi</button>
+                    <button type="submit" class="button" oneclick>Sprawdź swój wynik</button>
                 </a>
             </div>
         </form>
