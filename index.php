@@ -18,21 +18,30 @@
                 <h2>Quiz</h2>
             </div>
             <div class="main">
-                <?php 
-                    for($i=0; $i<1; $i++){
+                <?php
+                    /*for($j=0; $j<5; $j++){
+                        
+                        do{
+                            $repeat!="true";
+                            $
+                        }
+                    }*/
+                    for($i=0; $i<1; $i++)
+                    {
                         if($result = $db->query($questions))
                         {
                             while($row = $result->fetch_array())
                             {
                                 echo'
                                     <div><h3>'.$row["id"].'. '.$row["content"].':</h3></div>
-                                ';
+                                ';  
                                 if($result = $db->query($answears))
                                 {
                                     while($row = $result->fetch_array()) 
                                     {
                                         echo'
-                                            <div><h4><input type="radio" name="odpowiedz" value="'.$row["content"].'">'.$row["content"].'</h4></div>
+                                            <div><h4><input type="checkbox" name="'.$row["content"].'" value="'.$row["content"].'">'.$row["content"].'</h4></div>
+                                            <input type="hidden" name="is_true" value="'.$row["is_right"].'">
                                         '; 
                                     }
                                 }
@@ -43,7 +52,7 @@
             </div>
             <div class="footer">
                 <a href="wyniki.php">
-                    <button type="submit" class="button" oneclick>Sprawdź odpowiedzi</button>
+                    <button type="submit" class="button" oneclick>Sprawdź swój wynik</button>
                 </a>
             </div>
         </form>
