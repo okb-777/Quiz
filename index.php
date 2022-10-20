@@ -18,6 +18,7 @@
                 <h2>Quiz</h2>
             </div>
             <div class="main">
+<<<<<<< HEAD
                 <?php
                     /*for($j=0; $j<5; $j++){
                         
@@ -26,6 +27,9 @@
                             $
                         }
                     }*/
+=======
+                <?php 
+>>>>>>> 0870e5cba0598e53704789864cf0ad188a9415d3
                     for($i=0; $i<1; $i++)
                     {
                         if($result = $db->query($questions))
@@ -40,7 +44,11 @@
                                     while($row = $result->fetch_array()) 
                                     {
                                         echo'
+<<<<<<< HEAD
                                             <div><h4><input type="checkbox" name="'.$row["content"].'" value="'.$row["content"].'">'.$row["content"].'</h4></div>
+=======
+                                            <div><h4><input type="checkbox" name="odpowiedz" value="'.$row["content"].'">'.$row["content"].'</h4></div>
+>>>>>>> 0870e5cba0598e53704789864cf0ad188a9415d3
                                             <input type="hidden" name="is_true" value="'.$row["is_right"].'">
                                         '; 
                                     }

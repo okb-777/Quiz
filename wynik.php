@@ -16,7 +16,11 @@
         <div class="banner">
             <h2>Twój wynik</h2>
             <?php
+<<<<<<< HEAD
                 $answear = $_POST[''.$row["content"].''];
+=======
+                $answear = $_POST['odpowiedz'];
+>>>>>>> 0870e5cba0598e53704789864cf0ad188a9415d3
                 $is_true = $_POST['is_true'];
                 
                 if($is_true==1)
@@ -33,7 +37,11 @@
             <?php
                 $answear = $_POST[''.$row["content"].''];
             
+<<<<<<< HEAD
                 if(isset($_POST[''.$row["content"].'']))
+=======
+                if(isset($_POST['odpowiedz']))
+>>>>>>> 0870e5cba0598e53704789864cf0ad188a9415d3
                 {
                     echo "<b>".$answear."</b><br>";  
                 }
